@@ -231,6 +231,11 @@ ul{list-style:none}
 .career-list li:hover{padding-left:8px}
 .career-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:7px}
 .career-meta{font-size:13px;color:var(--text-3);margin-top:5px;font-style:italic}
+.attorney-stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--dark);margin-top:0}
+.attorney-stat{padding:20px 12px;text-align:center;position:relative}
+.attorney-stat+.attorney-stat::before{content:'';position:absolute;left:0;top:25%;height:50%;width:1px;background:rgba(255,255,255,.1)}
+.attorney-stat-num{display:block;font-family:var(--serif-en);font-size:20px;font-weight:700;color:var(--orange);margin-bottom:4px}
+.attorney-stat-label{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:1px}
 
 /* ===== BLOG / COLUMN ===== */
 .blog{background:var(--bg-2)}
@@ -392,6 +397,8 @@ footer{padding:72px 60px;background:var(--dark-deep)}
   .bb-phone{font-size:16px}
   .bb-submit{padding:0 20px;font-size:13px}
   .cta-form-wrap{padding:32px 20px}
+  .attorney-stats{grid-template-columns:1fr}
+  .attorney-stat+.attorney-stat::before{left:25%;top:0;height:1px;width:50%;background:rgba(255,255,255,.1)}
 }
 
 /* body padding for bottom bar */
@@ -489,20 +496,25 @@ body{padding-bottom:72px}
       <div class="attorney-photo">
         <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
       </div>
+      <div class="attorney-stats">
+        <div class="attorney-stat"><span class="attorney-stat-num">3년</span><span class="attorney-stat-label">재판연구원</span></div>
+        <div class="attorney-stat"><span class="attorney-stat-num">500건+</span><span class="attorney-stat-label">사건 검토</span></div>
+        <div class="attorney-stat"><span class="attorney-stat-num">무료</span><span class="attorney-stat-label">전화상담</span></div>
+      </div>
     </div>
     <div class="reveal">
       <div class="attorney-label">Representative Attorney</div>
       <h2 class="attorney-name">유환진</h2>
       <p class="attorney-role">대표변호사</p>
       <blockquote class="attorney-quote">재판부가 어떤 증거를 신뢰하고, 어떤 주장을 받아들이는지 압니다.<br>그 경험이, 지금 당신의 사건을 준비하는 방식이 됩니다.</blockquote>
-      <p class="attorney-bio">서울고등법원에서 3년간 재판연구원으로 근무하며, 어떤 증거가 판결을 움직이고, 어떤 주장이 받아들여지지 않는지를 가까이서 봤습니다. 그 눈을 가지고 대형로펌에서 형사 사건을 중심으로 실전을 뛰었고, 지금은 의뢰인의 사건에 쓰고 있습니다.</p>
+      <p class="attorney-bio">서울고등법원에서 3년간 500건 이상의 사건을 검토하며, 어떤 증거가 판결을 움직이고, 어떤 주장이 받아들여지지 않는지를 가까이서 봤습니다. 그 눈을 가지고 대형로펌에서 형사 사건을 중심으로 실전을 뛰었고, 지금은 의뢰인의 사건에 쓰고 있습니다.</p>
       <ul class="career-list">
         <li><span class="career-dot"></span><div>제11회 변호사시험 합격</div></li>
         <li><span class="career-dot"></span><div>서울고등법원 재판연구원 (2022~2025)<br><span class="career-meta">민사·형사·행정 3개 부에서 500건 이상의 사건을 검토하며 재판부의 판단 기준을 체득했습니다</span></div></li>
         <li><span class="career-dot"></span><div>법무법인(유한) 화우 (2025~2026)<br><span class="career-meta">형사 변호와 기업 분쟁 사건에서 재판연구원 경험을 실전에 적용했습니다</span></div></li>
         <li><span class="career-dot"></span><div>유앤파트너스 대표변호사 (2026~현재)<br><span class="career-meta">지금은 의뢰인 곁에서 직접 싸웁니다</span></div></li>
       </ul>
-      <a href="#contact" class="hero-btn-primary" style="margin-top:36px;display:inline-flex">변호사에게 직접 상담하기</a>
+      <a href="#contact" class="hero-btn-primary" style="margin-top:48px;display:inline-flex">변호사에게 직접 상담하기</a>
     </div>
   </div>
 </section>

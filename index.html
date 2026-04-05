@@ -232,12 +232,12 @@ ul{list-style:none}
 .career-list li:hover{padding-left:8px}
 .career-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:7px}
 .career-meta{font-size:13px;color:var(--text-3);margin-top:5px;font-style:italic}
-.attorney-stats{position:absolute;bottom:0;left:0;right:0;display:flex;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:18px 20px;z-index:2}
+.attorney-stats{display:flex;background:var(--dark);padding:20px 24px}
 .attorney-stat{flex:1;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;gap:5px}
-.attorney-stat+.attorney-stat::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);height:32px;width:1px;background:rgba(255,255,255,.2)}
+.attorney-stat+.attorney-stat::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);height:36px;width:1px;background:rgba(255,255,255,.15)}
 .attorney-stat-num{font-family:var(--serif-en);font-size:28px;font-weight:600;color:var(--orange);line-height:1}
 .attorney-stat-num.stat-highlight{font-size:32px}
-.attorney-stat-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.7);letter-spacing:1px}
+.attorney-stat-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.6);letter-spacing:1px}
 
 /* ===== BLOG / COLUMN ===== */
 .blog{background:var(--bg-2)}
@@ -496,8 +496,10 @@ body{padding-bottom:72px}
 <section class="attorney" id="attorney">
   <div class="attorney-inner">
     <div class="reveal">
-      <div class="attorney-photo">
-        <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
+      <div class="attorney-photo-wrap">
+        <div class="attorney-photo">
+          <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
+        </div>
         <div class="attorney-stats">
           <div class="attorney-stat"><span class="attorney-stat-num">3년</span><span class="attorney-stat-label">재판연구원</span></div>
           <div class="attorney-stat"><span class="attorney-stat-num stat-highlight">500건+</span><span class="attorney-stat-label">사건 검토</span></div>

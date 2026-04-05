@@ -232,13 +232,12 @@ ul{list-style:none}
 .career-list li:hover{padding-left:8px}
 .career-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:7px}
 .career-meta{font-size:13px;color:var(--text-3);margin-top:5px;font-style:italic}
-.profile-wrap{display:flex;flex-direction:column}
-.profile-stats{display:flex;background:#1a1410;padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
-.profile-stat{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center}
-.profile-stat-num{font-family:var(--serif-en);font-size:26px;font-weight:600;color:var(--orange);letter-spacing:1px;line-height:1}
-.profile-stat-num.ps-lg{font-size:30px}
-.profile-stat-label{font-family:var(--sans);font-size:11px;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:2px;margin-top:8px}
-.profile-stat-mid{border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1);padding:0 4px}
+.stat-bar{display:flex;align-items:center;justify-content:center;background:#1a1410;padding:24px 20px;gap:0;border-top:1px solid rgba(255,255,255,0.06)}
+.stat-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.stat-number{font-family:inherit;font-size:22px;font-weight:500;color:#c45a2d;letter-spacing:0.5px}
+.stat-highlight .stat-number{font-size:26px;font-weight:600}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;font-weight:300}
+.stat-divider{width:1px;height:32px;background:rgba(255,255,255,0.1);flex-shrink:0}
 
 /* ===== BLOG / COLUMN ===== */
 .blog{background:var(--bg-2)}
@@ -400,10 +399,10 @@ footer{padding:72px 60px;background:var(--dark-deep)}
   .bb-phone{font-size:16px}
   .bb-submit{padding:0 20px;font-size:13px}
   .cta-form-wrap{padding:32px 20px}
-  .profile-stats{padding:20px 0}
-  .profile-stat-num{font-size:20px}
-  .profile-stat-num.ps-lg{font-size:23px}
-  .profile-stat-label{font-size:10px}
+  .stat-number{font-size:18px}
+  .stat-highlight .stat-number{font-size:21px}
+  .stat-label{font-size:9px}
+  .stat-bar{padding:18px 12px}
 }
 
 /* body padding for bottom bar */
@@ -498,14 +497,23 @@ body{padding-bottom:72px}
 <section class="attorney" id="attorney">
   <div class="attorney-inner">
     <div class="reveal">
-      <div class="profile-wrap">
-        <div class="attorney-photo">
-          <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
+      <div class="attorney-photo">
+        <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="stat-bar">
+        <div class="stat-item">
+          <span class="stat-number">3년</span>
+          <span class="stat-label">재판연구원</span>
         </div>
-        <div class="profile-stats">
-          <div class="profile-stat"><span class="profile-stat-num">3년</span><span class="profile-stat-label">재판연구원</span></div>
-          <div class="profile-stat profile-stat-mid"><span class="profile-stat-num ps-lg">500건+</span><span class="profile-stat-label">사건 검토</span></div>
-          <div class="profile-stat"><span class="profile-stat-num">무료</span><span class="profile-stat-label">전화상담</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item stat-highlight">
+          <span class="stat-number">500건+</span>
+          <span class="stat-label">사건 검토</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">무료</span>
+          <span class="stat-label">전화상담</span>
         </div>
       </div>
     </div>

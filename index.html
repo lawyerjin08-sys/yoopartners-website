@@ -218,7 +218,6 @@ ul{list-style:none}
 /* ===== ATTORNEY ===== */
 .attorney{background:var(--bg)}
 .attorney-inner{max-width:1280px;margin:0 auto;padding:140px 60px;display:grid;grid-template-columns:.85fr 1.15fr;gap:100px;align-items:start}
-.attorney-photo-wrap{display:flex;flex-direction:column}
 .attorney-photo{aspect-ratio:3/4;overflow:hidden}
 .attorney-photo-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--dark) 0%,#3d2515 100%);color:rgba(255,255,255,.2);font-size:13px;letter-spacing:3px;position:relative}
 .attorney-photo-ph::after{content:'';position:absolute;inset:0;border:1px solid rgba(216,90,48,.1)}
@@ -233,12 +232,13 @@ ul{list-style:none}
 .career-list li:hover{padding-left:8px}
 .career-dot{width:7px;height:7px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:7px}
 .career-meta{font-size:13px;color:var(--text-3);margin-top:5px;font-style:italic}
-.attorney-stats{display:flex;background:var(--dark);padding:20px 24px;flex-shrink:0}
-.attorney-stat{flex:1;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;gap:5px}
-.attorney-stat+.attorney-stat::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);height:36px;width:1px;background:rgba(255,255,255,.15)}
-.attorney-stat-num{font-family:var(--serif-en);font-size:28px;font-weight:600;color:var(--orange);line-height:1}
-.attorney-stat-num.stat-highlight{font-size:32px}
-.attorney-stat-label{font-size:11px;font-weight:400;color:rgba(255,255,255,.6);letter-spacing:1px}
+.profile-wrap{display:flex;flex-direction:column}
+.profile-stats{display:flex;background:#1a1410;padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
+.profile-stat{flex:1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.profile-stat-num{font-family:var(--serif-en);font-size:26px;font-weight:600;color:var(--orange);letter-spacing:1px;line-height:1}
+.profile-stat-num.ps-lg{font-size:30px}
+.profile-stat-label{font-family:var(--sans);font-size:11px;font-weight:400;color:rgba(255,255,255,.45);letter-spacing:2px;margin-top:8px}
+.profile-stat-mid{border-left:1px solid rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.1);padding:0 4px}
 
 /* ===== BLOG / COLUMN ===== */
 .blog{background:var(--bg-2)}
@@ -400,9 +400,10 @@ footer{padding:72px 60px;background:var(--dark-deep)}
   .bb-phone{font-size:16px}
   .bb-submit{padding:0 20px;font-size:13px}
   .cta-form-wrap{padding:32px 20px}
-  .attorney-stat-num{font-size:22px}
-  .attorney-stat-num.stat-highlight{font-size:24px}
-  .attorney-stat-label{font-size:10px}
+  .profile-stats{padding:20px 0}
+  .profile-stat-num{font-size:20px}
+  .profile-stat-num.ps-lg{font-size:23px}
+  .profile-stat-label{font-size:10px}
 }
 
 /* body padding for bottom bar */
@@ -497,14 +498,14 @@ body{padding-bottom:72px}
 <section class="attorney" id="attorney">
   <div class="attorney-inner">
     <div class="reveal">
-      <div class="attorney-photo-wrap">
+      <div class="profile-wrap">
         <div class="attorney-photo">
           <img src="images/profile1.jpg" alt="유환진 대표변호사 프로필 사진" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <div class="attorney-stats">
-          <div class="attorney-stat"><span class="attorney-stat-num">3년</span><span class="attorney-stat-label">재판연구원</span></div>
-          <div class="attorney-stat"><span class="attorney-stat-num stat-highlight">500건+</span><span class="attorney-stat-label">사건 검토</span></div>
-          <div class="attorney-stat"><span class="attorney-stat-num">무료</span><span class="attorney-stat-label">전화상담</span></div>
+        <div class="profile-stats">
+          <div class="profile-stat"><span class="profile-stat-num">3년</span><span class="profile-stat-label">재판연구원</span></div>
+          <div class="profile-stat profile-stat-mid"><span class="profile-stat-num ps-lg">500건+</span><span class="profile-stat-label">사건 검토</span></div>
+          <div class="profile-stat"><span class="profile-stat-num">무료</span><span class="profile-stat-label">전화상담</span></div>
         </div>
       </div>
     </div>

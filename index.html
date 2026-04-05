@@ -424,6 +424,7 @@ body{padding-bottom:72px}
 .kakao-float{position:fixed;bottom:24px;right:24px;z-index:997;width:56px;height:56px;border-radius:50%;background:#FEE500;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .3s var(--ease);cursor:pointer}
 .kakao-float:hover{transform:scale(1.1)}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -787,11 +788,11 @@ body{padding-bottom:72px}
       <h3 class="cta-form-title">온라인 상담 신청</h3>
       <p class="cta-form-sub">접수 후 변호사가 직접 연락드립니다</p>
       <div id="ctaFormArea">
-        <form class="cta-form" id="ctaForm" action="https://formspree.io/f/xlgobrao" method="POST">
+        <form class="cta-form" id="contact-form">
           <div class="form-row">
             <div class="fg">
               <label>이름 <span style="color:var(--orange)">*</span></label>
-              <input type="text" name="name" placeholder="이름" required>
+              <input type="text" name="from_name" placeholder="이름" required>
             </div>
             <div class="fg">
               <label>연락처 <span style="color:var(--orange)">*</span></label>
@@ -800,7 +801,7 @@ body{padding-bottom:72px}
           </div>
           <div class="fg">
             <label>상담분야 <span style="color:var(--orange)">*</span></label>
-            <select name="area" required>
+            <select name="category" required>
               <option value="" disabled selected>상담 분야를 선택해주세요</option>
               <option>형사 변호</option>
               <option>민사소송</option>
@@ -940,20 +941,32 @@ function toggleFaq(el){
   if(!wasOpen)item.classList.add('open');
 }
 
-/* CTA Form */
-var ctaForm=document.getElementById('ctaForm');
-ctaForm.addEventListener('submit',function(e){
-  e.preventDefault();
-  var data=new FormData(ctaForm);
-  fetch(ctaForm.action,{method:'POST',body:data,headers:{'Accept':'application/json'}})
-  .then(function(r){
-    if(r.ok){
-      document.getElementById('ctaFormArea').style.display='none';
-      document.getElementById('ctaThanks').style.display='block';
-    }else{alert('전송에 실패했습니다. 다시 시도해주세요.');}
-  })
-  .catch(function(){alert('전송에 실패했습니다. 다시 시도해주세요.');});
-});
+/* CTA Form - EmailJS */
+emailjs.init("d2kzBPblftic_FXBwpbgt");
+var contactForm=document.getElementById('contact-form');
+if(contactForm){
+  contactForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var checkbox=contactForm.querySelector('input[type="checkbox"]');
+    if(checkbox&&!checkbox.checked){alert('개인정보 수집·이용에 동의해주세요.');return;}
+    var submitBtn=contactForm.querySelector('button[type="submit"]')||contactForm.querySelector('button');
+    var originalText=submitBtn.textContent;
+    submitBtn.textContent='전송 중...';
+    submitBtn.disabled=true;
+    emailjs.sendForm('service_myseller','template_7al5np8',this)
+      .then(function(){
+        alert('상담 신청이 접수되었습니다. 변호사가 직접 연락드리겠습니다.');
+        contactForm.reset();
+        submitBtn.textContent=originalText;
+        submitBtn.disabled=false;
+      },function(error){
+        alert('전송에 실패했습니다. 전화(010-8551-8778)로 연락주세요.');
+        console.error('EmailJS error:',error);
+        submitBtn.textContent=originalText;
+        submitBtn.disabled=false;
+      });
+  });
+}
 
 /* Bottom Bar Form */
 function handleBottomSubmit(e){

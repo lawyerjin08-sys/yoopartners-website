@@ -369,40 +369,59 @@ footer{padding:72px 60px;background:var(--dark-deep)}
   .nav-links{display:none}
   .nav-hamburger{display:flex}
   .mobile-menu{display:flex}
+  /* Hero: CTA visible without scroll */
   .hero-content{padding:0 24px}
-  .hero-cta-row{flex-direction:column;align-items:center;gap:12px}
+  .hero-badge{margin-bottom:24px}
+  .hero-badge span{font-size:10px}
+  .hero-credential{font-size:13px;letter-spacing:2px;margin-bottom:20px}
+  .hero-cta-row{flex-direction:column;align-items:center;gap:12px;margin-top:32px}
   .hero-btn-primary,.hero-btn-secondary{width:100%;justify-content:center;max-width:300px}
-  .sec{padding:80px 20px}
-  .why-inner,.process-inner,.blog-inner,.faq-inner{padding:80px 20px}
-  .cta-inner{padding:80px 20px;gap:48px}
-  .attorney-inner{padding:80px 20px;gap:48px}
+  /* Sections: tighter spacing */
+  .sec{padding:40px 20px}
+  .why-inner,.process-inner,.blog-inner,.faq-inner{padding:40px 20px}
+  .cta-inner{padding:40px 20px;gap:32px}
+  .attorney-inner{padding:40px 20px;gap:32px}
+  .sec-title{font-size:clamp(24px,6vw,36px);margin-bottom:12px}
+  .sec-line{margin:16px 0}
+  .sec-desc{margin-bottom:16px}
+  /* Why Us & Practice cards gap */
+  .why-grid{gap:12px}
+  .practice-grid{gap:0}
+  .practice-card{padding:36px 24px}
+  /* Attorney */
+  .attorney-name{font-size:32px}
+  .attorney-photo{max-height:50vh}
+  .attorney-photo img{max-height:50vh}
+  /* Process timeline */
   .process-timeline{grid-template-columns:1fr}
   .process-timeline::before{left:20px}
   .process-step:nth-child(odd),.process-step:nth-child(even){grid-column:1;padding-left:52px;padding-right:20px;text-align:left}
   .process-step:nth-child(odd)::before,.process-step:nth-child(even)::before{left:14px;right:auto}
   .process-step:nth-child(odd)::after,.process-step:nth-child(even)::after{left:26px;right:auto}
-  .bottom-bar{padding:0 16px;height:auto;min-height:64px;flex-wrap:wrap;gap:8px;padding:10px 16px}
-  .bb-form{flex-wrap:wrap;gap:8px;margin-left:0}
-  .bb-form input:nth-child(2){display:none}
-  .bb-form select{min-width:90px}
+  /* Bottom bar: simplified */
+  .bottom-bar{padding:8px 12px;height:56px;min-height:auto;flex-wrap:nowrap;gap:12px}
+  .bb-form input,.bb-form select,.bb-form .form-privacy,.bb-form input[type="checkbox"],.bb-form label{display:none}
+  .bb-form{gap:8px;margin-left:auto;flex:0 0 auto}
+  .bb-submit{display:inline-flex}
+  /* Footer */
   footer{padding:48px 20px}
   .footer-links{flex-direction:column;gap:32px}
   .form-row{grid-template-columns:1fr}
-  .attorney-name{font-size:32px}
-  .sec-title{font-size:clamp(24px,6vw,36px)}
+  /* Floating buttons above bottom bar */
+  .kakao-float{bottom:80px}
+  /* Stat bar */
+  .stat-number{font-size:18px}
+  .stat-highlight .stat-number{font-size:21px}
+  .stat-label{font-size:9px}
+  .stat-bar{padding:18px 12px}
 }
 
 @media(max-width:480px){
   .nav-logo{font-size:15px;letter-spacing:2px}
   .hero-badge{padding:6px 14px}
-  .hero-badge span{font-size:10px}
   .bb-phone{font-size:16px}
   .bb-submit{padding:0 20px;font-size:13px}
   .cta-form-wrap{padding:32px 20px}
-  .stat-number{font-size:18px}
-  .stat-highlight .stat-number{font-size:21px}
-  .stat-label{font-size:9px}
-  .stat-bar{padding:18px 12px}
 }
 
 /* body padding for bottom bar */

@@ -408,8 +408,10 @@ footer{padding:72px 60px;background:var(--dark-deep)}
   footer{padding:48px 20px}
   .footer-links{flex-direction:column;gap:32px}
   .form-row{grid-template-columns:1fr}
+  /* Scroll fix for mobile */
+  html{scroll-padding-top:64px}
   /* Floating buttons above bottom bar */
-  .kakao-float{bottom:80px;right:16px}
+  .kakao-float{bottom:120px !important;right:16px !important;z-index:9999 !important}
   /* Stat bar */
   .stat-number{font-size:18px}
   .stat-highlight .stat-number{font-size:21px}

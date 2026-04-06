@@ -979,7 +979,7 @@ if(contactForm){
         submitBtn.textContent=originalText;
         submitBtn.disabled=false;
       },function(error){
-        alert('전송에 실패했습니다. 전화(010-8551-8778)로 연락주세요.');
+        alert('전송 실패: ' + JSON.stringify(error));
         console.error('EmailJS error:',error);
         submitBtn.textContent=originalText;
         submitBtn.disabled=false;
